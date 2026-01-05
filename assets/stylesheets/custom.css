@@ -5,56 +5,44 @@ body, div, p, span, a, input, select, textarea, h1, h2, h3, h4, h5, h6 {
 
 /* 일감 상태 뱃지 스타일 (Modern Solid Badge) 적용 대상: .status-badge (span 태그) */
 .status-badge {
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 99px;
-    font-size: 11px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 1.2;
+    display: inline-block !important;
+    width: auto !important;
+    min-width: 1em !important;
+    padding: 0 8px !important;
+    border-radius: 3px !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
     color: #fff !important;
-    vertical-align: middle;
-    margin-top: 0;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    border: 1px solid transparent;
-    white-space: nowrap;
 }
 
 /* 상태별 색상 매핑 (Redmine 기본 status ID 및 커스텀 클래스 지원) */
 
 /* 1. 신규 (New) - 파란색 계열 */
-.status-badge.status-new,
-.status-badge.status-1 {
-    background-color: #4A90E2;
-    border-color: #357ABD;
+.status-badge[data-status="신규"], .status.attribute[data-status="신규"] .value {
+    background-color: #4A90E2 !important;
+    border-color: #357ABD !important;
 }
 
 /* 2. 진행 (In Progress) - 초록색 계열 */
-.status-badge.status-inprogress,
-.status-badge.status-2 {
-    background-color: #4CAF50;
-    border-color: #388E3C;
+.status-badge[data-status="진행"], .status.attribute[data-status="진행"] .value {
+    background-color: #4CAF50 !important;
+    border-color: #388E3C !important;
 }
 
 /* 3. 완료 (Complete/Closed) - 회색/블루그레이 계열 */
-.status-badge.status-complete,
-.status-badge.status-closed,
-.status-badge.status-3,
-.status-badge.status-5 {
-    background-color: #78909C;
-    border-color: #546E7A;
+.status-badge[data-status="완료"], .status.attribute[data-status="완료"] .value {
+    background-color: #78909C !important;
+    border-color: #546E7A !important;
 }
 
 /* 4. 보류 (On Hold) - 주황색 계열 */
-.status-badge.status-on-hold,
-.status-badge.status-4,
-.status-badge.status-6 {
-    background-color: #FF9800;
-    border-color: #F57C00;
+.status-badge[data-status="보류"], .status.attribute[data-status="보류"] .value {
+    background-color: #FF9800 !important;
+    border-color: #F57C00 !important;
 }
 
 /* 기본값 (매칭되는 클래스가 없을 때) */
-.status-badge:not([class*="status-"]) {
+.status-badge:not([data-status]), .status.attribute:not([data-status]) .value {
     background-color: #9E9E9E;
 }
 
