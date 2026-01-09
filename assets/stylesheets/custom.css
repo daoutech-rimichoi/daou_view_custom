@@ -101,26 +101,38 @@ p#change_author {
 }
 
 /* 일감 목록 - 가로 길이 고정 */
+.list.issues th.project {
+    width: 150px;
+}
+
 .list.issues th.status {
-    width: 45px;
+    width: 50px;
 }
 
 .list.issues th.priority {
-    width: 60px;
+    width: 65px;
 }
 
 .list.issues th.created_on, .list.issues th.updated_on, .list.issues th.closed_on {
-    width: 105px;
+    width: 110px;
 }
 
-.list.issues th.due_date {
-    width: 70px;
+.list.issues th.start_date, .list.issues th.due_date {
+    width: 75px;
 }
 
 .list.issues th.hide-when-print {
-    width: 20px;
+    width: 25px;
 }
 
 .list.issues th.author, .list.issues th.assigned_to {
     width: 185px;
+}
+
+/* 일감 편집 > issue_estimated_hours를 자식으로 둔 p 태그를 숨김 */
+p:has(#issue_estimated_hours) {
+    display: none;
+}
+#content > div.issue > div.attributes div.estimated-hours.attribute {
+    display: none;
 }

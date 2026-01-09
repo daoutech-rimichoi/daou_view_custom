@@ -1,0 +1,10 @@
+<fieldset class="box tabular">
+  <legend>Git</legend>
+  <p>
+    <%= content_tag :label, l(:label_git_base_url) %>
+    <%= text_field_tag 'settings[git_base_url]', @settings['git_base_url'], size: 60, placeholder: 'https://repo.daou.co.kr' %>
+  </p>
+  <p class="description">
+    <%= l(:text_git_base_url_description) %>
+  </p>
+</fieldset>

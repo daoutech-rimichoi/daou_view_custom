@@ -1,0 +1,6 @@
+ko:
+  label_git_base_url: "Base URL"
+  text_git_base_url_description: "Git 서버의 기본 URL을 입력하세요 (예: https://repo.daou.co.kr)"
+  label_git_history: "Git 이력"
+  label_project_required_fields: "필수 필드 설정"
+  label_project_required_fields_select: "일감 생성 시 필수 입력할 필드를 선택하세요"

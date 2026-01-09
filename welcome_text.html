@@ -1,0 +1,169 @@
+<style>/* 사용자 제공 스타일 (운영 개발 통합 포털) - 반응형 개선 */
+.custom-dashboard {
+    padding: 20px;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    border: none;
+}
+
+.dashboard-header p {
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    flex: 1 1 250px;
+    max-width: 300px;
+    min-width: 200px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+
+.info-card .info-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    margin: 10px 0;
+    color: #34495e;
+}
+
+.info-card p {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+.notice-section h3 {
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.notice-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.notice-section li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+/* 태블릿 반응형 (768px ~ 992px) */
+@media (max-width: 992px) {
+    .dashboard-header h1 {
+        font-size: 1.8em;
+    }
+
+    .info-card {
+        flex: 1 1 calc(50% - 10px);
+        max-width: none;
+        min-width: 180px;
+    }
+
+    .custom-dashboard {
+        padding: 15px;
+    }
+}
+
+/* 모바일 반응형 (768px 이하) */
+@media (max-width: 768px) {
+    .custom-dashboard {
+        padding: 10px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5em;
+    }
+
+    .card-container {
+        gap: 15px;
+    }
+
+    .info-card {
+        flex: 1 1 100%;
+        max-width: none;
+        min-width: auto;
+        padding: 20px;
+    }
+
+    .info-card .info-icon {
+        font-size: 2.5em;
+    }
+
+    .info-card h3 {
+        font-size: 1.1em;
+    }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .dashboard-header h1 {
+        font-size: 1.3em;
+    }
+
+    .info-card {
+        padding: 15px;
+    }
+
+    .info-card .info-icon {
+        font-size: 2em;
+    }
+}
+</style>
+<div class="custom-dashboard">
+    <!-- 헤더 섹션 -->
+    <div class="dashboard-header">
+        <h1><b>🚀 다우기술 서비스 운영 통합 포털</b></h1>
+        <p>서비스 이슈 트래킹 시스템 입니다.</p>
+    </div>
+    <!-- 빠른 바로가기 카드 섹션 -->
+    <div class="card-container">
+        <div class="info-card" onclick="location.href='/projects'">
+            <div class="info-icon">📂</div>
+            <h3><b>전체 프로젝트</b></h3>
+            <p>진행 중인 모든 이슈 카테고리 확인</p>
+        </div>
+        <div class="info-card" onclick="location.href='/issues?assigned_to_id=me&amp;set_filter=1'">
+            <div class="info-icon">✅</div>
+            <h3><b>내 할 일</b></h3>
+            <p>나에게 할당된 미해결 이슈 확인</p>
+        </div>
+        <div class="info-card"
+             onclick="window.open('https://task.daou.co.kr/custom/file/레드마인 사용자 매뉴얼(5.0.x).pdf', '_blank', 'noopener')">
+            <div class="info-icon">📘</div>
+            <h3><b>레드마인 매뉴얼</b></h3>
+            <p>레드마인 전체 사용설명서</p>
+        </div>
+    </div>
+</div>
