@@ -92,6 +92,15 @@
     text-decoration: underline;
 }
 
+/* 통계 테이블 관련 스타일 추가 */
+.stat-none {
+    color: #ccc;
+}
+
+.stat-na {
+    color: #eee;
+}
+
 /* 추가된 대시보드 공통 스타일 */
 .dashboard-main-title {
     border-bottom: 2px solid #eee;
@@ -135,10 +144,19 @@
 
 .filter-item input.datepicker-input {
     width: 130px;
-    height: 36px;
+    height: 30px;
     padding: 0 10px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+/* select2 전역 적용 대응을 위한 높이 고정 */
+.filter-project-select {
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
 }
 
 .filter-separator {
@@ -146,7 +164,7 @@
 }
 
 .filter-submit-btn {
-    height: 36px;
+    height: 30px;
     box-sizing: border-box;
     vertical-align: middle;
     display: inline-flex;

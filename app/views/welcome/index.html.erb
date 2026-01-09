@@ -24,7 +24,7 @@
   <form class="date-filter-form" method="get">
     <div class="filter-item">
       <label for="project_id">프로젝트 선택</label>
-      <select name="project_id" id="project_id" style="height: 38px; padding: 0 10px; border: 1px solid #ddd; border-radius: 4px;">
+      <select name="project_id" id="project_id" class="filter-project-select">
         <option value="">전체</option>
         <% Project.visible.where(parent_id: nil).sorted.each do |p| %>
           <option value="<%= p.id %>" <%= 'selected' if params[:project_id].to_s == p.id.to_s %>><%= p.name %></option>
@@ -96,10 +96,10 @@
                   <% if count > 0 %>
                     <%= link_to count, project_issues_path(project, set_filter: 1, status_id: status.id), class: 'clickable-count' %>
                   <% else %>
-                    <span style="color: #ccc;">-</span>
+                    <span class="stat-none">-</span>
                   <% end %>
                 <% else %>
-                  <span style="color: #eee;">-</span>
+                  <span class="stat-na">-</span>
                 <% end %>
               </td>
             <% end %>

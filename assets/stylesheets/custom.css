@@ -136,3 +136,8 @@ p:has(#issue_estimated_hours) {
 #content > div.issue > div.attributes div.estimated-hours.attribute {
     display: none;
 }
+
+/* 프로젝트 필수 필드 설정 레이블 */
+.required-field-label {
+    margin-right: 10px;
+}

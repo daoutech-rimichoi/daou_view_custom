@@ -23,7 +23,7 @@
         selected_fields = @project.project_required_fields.pluck(:field_name)
       %>
       <% available_fields.each do |field_name, label| %>
-        <label class="floating" style="margin-right: 10px;">
+        <label class="floating required-field-label">
           <%= check_box_tag 'required_fields[]', field_name, selected_fields.include?(field_name) %>
           <%= label %>
         </label>
