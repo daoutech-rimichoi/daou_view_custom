@@ -46,29 +46,78 @@ body, div, p, span, a, input, select, textarea, h1, h2, h3, h4, h5, h6 {
     background-color: #9E9E9E;
 }
 
-/* Critical 우선순위의 행을 강조 */
-tr.priority-3 {
-    background-color: #ffebeb !important;
+/* 일감 목록 표현 시 색상 조정 */
+table.list tr.issue > td.subject > a.issue {
+    color: #fff !important;
 }
 
-tr.priority-3:hover {
-    background-color: #ffdce0 !important;
+.list.issues th.tracker {
+    min-width: 30px;
 }
 
-tr.priority-4 {
-    background-color: #ffc9c9 !important;
+tr.issue > td.id > a {
+    color: #fff !important;
 }
 
-tr.priority-4:hover {
-    background-color: #ffb5b5 !important;
+tr.issue.priority-1.even {
+    background: #fff !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
 }
 
-tr.priority-5 {
-    background-color: #ff9e9e !important;
+tr.issue.priority-1.odd {
+    background: #f6f7f8 !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
 }
 
-tr.priority-5:hover {
-    background-color: #ff8a8a !important;
+tr.issue.priority-1 a {
+    color: rgb(0, 80.8, 204) !important;
+}
+
+table.list.issues > tbody > tr.issue.priority-1:hover {
+    background-color: hsla(230.8609271523, 20%, 85%, .4) !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
+}
+
+tr.issue.priority-3 {
+    background: #ffebeb !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
+}
+
+tr.issue.priority-3 a {
+    color: rgb(0, 80.8, 204) !important;
+}
+
+table.list.issues > tbody > tr.issue.priority-3:hover {
+    background: #ffdce0 !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
+}
+
+tr.issue.priority-4 {
+    background: #ffc9c9 !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
+}
+
+tr.issue.priority-4 a {
+    color: rgb(0, 80.8, 204) !important;
+}
+
+table.list.issues > tbody > tr.issue.priority-4:hover {
+    background: #ffb5b5 !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
+}
+
+tr.issue.priority-5 {
+    background: #ff9e9e !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
+}
+
+tr.issue.priority-5 a {
+    color: rgb(0, 80.8, 204) !important;
+}
+
+table.list.issues > tbody > tr.issue.priority-5:hover {
+    background: #ff8a8a !important;
+    color: rgb(61.805625, 66.0878518212, 89.919375) !important;
 }
 
 /* 상단 헤더 로고 */
@@ -105,8 +154,12 @@ p#change_author {
     width: 150px;
 }
 
+.list.issues th.tracker {
+    min-width: 30px;
+}
+
 .list.issues th.status {
-    width: 50px;
+    width: 55px;
 }
 
 .list.issues th.priority {
@@ -127,14 +180,6 @@ p#change_author {
 
 .list.issues th.author, .list.issues th.assigned_to {
     width: 185px;
-}
-
-/* 일감 편집 > issue_estimated_hours를 자식으로 둔 p 태그를 숨김 */
-p:has(#issue_estimated_hours) {
-    display: none;
-}
-#content > div.issue > div.attributes div.estimated-hours.attribute {
-    display: none;
 }
 
 /* 프로젝트 필수 필드 설정 레이블 */

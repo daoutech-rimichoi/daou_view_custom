@@ -40,7 +40,7 @@ apply_patches = -> do
 
   # ProjectsHelper 패치
   unless ProjectsHelper.ancestors.include?(DaouViewCustom::ProjectsHelperPatch)
-    ProjectsHelper.prepend(DaouViewCustom::ProjectsHelperPatch)
+    ProjectsHelper.send(:include, DaouViewCustom::ProjectsHelperPatch)
   end
 
   # IssuesHelper::IssueFieldsRows 패치

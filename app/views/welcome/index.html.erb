@@ -87,14 +87,14 @@
           <tbody>
           <tr>
             <td>
-              <%= link_to stats[:total], project_issues_path(project, set_filter: 1), class: 'clickable-count' %>
+              <%= link_to stats[:total], project_issues_path(project, set_filter: 1, f: ['status_id', 'created_on'], op: { status_id: '*', created_on: '><' }, v: { created_on: [dashboard_service.start_date, dashboard_service.end_date] }), class: 'clickable-count' %>
             </td>
             <% display_statuses.each do |status| %>
               <td>
                 <% if status %>
                   <% count = stats[:counts][status.id] || 0 %>
                   <% if count > 0 %>
-                    <%= link_to count, project_issues_path(project, set_filter: 1, status_id: status.id), class: 'clickable-count' %>
+                    <%= link_to count, project_issues_path(project, set_filter: 1, f: ['status_id', 'created_on'], op: { status_id: '=', created_on: '><' }, v: { status_id: [status.id], created_on: [dashboard_service.start_date, dashboard_service.end_date] }), class: 'clickable-count' %>
                   <% else %>
                     <span class="stat-none">-</span>
                   <% end %>
