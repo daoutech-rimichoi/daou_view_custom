@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Chart Initialization Helper
 window.initDashboardChart = function(canvasId, labels, data, colors) {
     var ctx = document.getElementById(canvasId).getContext('2d');
-    new Chart(ctx, {
+    const chart = new Chart(ctx, {
         type: 'pie',
         data: {
             labels: labels,
@@ -76,4 +76,7 @@ window.initDashboardChart = function(canvasId, labels, data, colors) {
         },
         plugins: [ChartDataLabels]
     });
+
+    chart.reset();   // 차트 요소를 초기 위치(각도 0)로 리셋
+    chart.update();  // 다시 애니메이션과 함께 그림
 };

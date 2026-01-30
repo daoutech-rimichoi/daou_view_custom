@@ -4,8 +4,8 @@ Redmine::Plugin.register :daou_view_custom do
   name 'Daoutech View Custom Plugin'
   author 'rimichoi'
   description 'Custom view hooks and patches for Daoutech Redmine'
-  version '0.0.3'
-  requires_redmine :version_or_higher => '6.0.0'
+  version '0.0.4'
+  requires_redmine :version_or_higher => '5.0.0'
   url 'https://github.com/daoutech-rimichoi/daou_view_custom'
   author_url 'mailto:rimichoi@daou.co.kr'
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateProjectRequiredFields < ActiveRecord::Migration[7.2]
+class CreateProjectRequiredFields < ActiveRecord::Migration[6.1]
   def change
     create_table :project_required_fields, if_not_exists: true do |t|
       t.references :project, type: :integer, foreign_key: true

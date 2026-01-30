@@ -1,34 +1,32 @@
 <%= form_tag(project_required_fields_path(@project), method: :post) do %>
-  <div class="box tabular">
-    <p>
-      <label><%= l(:label_project_required_fields_select) %></label>
-      <% 
-        # Redmine 코어 번역(Global)을 사용합니다.
-        available_fields = {
-          'assigned_to_id' => l(:field_assigned_to),
-          'category_id' => l(:field_category),
-          'fixed_version_id' => l(:field_fixed_version),
-          'start_date' => l(:field_start_date),
-          'due_date' => l(:field_due_date),
-          'estimated_hours' => l(:field_estimated_hours),
-          'done_ratio' => l(:field_done_ratio),
-          'description' => l(:field_description)
-        }
-        
-        # 커스텀 필드 추가
-        IssueCustomField.all.each do |cf|
-          available_fields["custom_field_#{cf.id}"] = cf.name
-        end
+  <fieldset class="box tabular">
+    <legend><%= l(:label_project_required_fields_select) %></legend>
+    <%
+      # Redmine 코어 번역(Global)을 사용합니다.
+      available_fields = {
+        'assigned_to_id' => l(:field_assigned_to),
+        'category_id' => l(:field_category),
+        'fixed_version_id' => l(:field_fixed_version),
+        'start_date' => l(:field_start_date),
+        'due_date' => l(:field_due_date),
+        'estimated_hours' => l(:field_estimated_hours),
+        'done_ratio' => l(:field_done_ratio),
+        'description' => l(:field_description)
+      }
 
-        selected_fields = @project.project_required_fields.pluck(:field_name)
-      %>
-      <% available_fields.each do |field_name, label| %>
-        <label class="floating required-field-label">
-          <%= check_box_tag 'required_fields[]', field_name, selected_fields.include?(field_name) %>
-          <%= label %>
-        </label>
-      <% end %>
-    </p>
-  </div>
+      # 커스텀 필드 추가
+      IssueCustomField.all.each do |cf|
+        available_fields["custom_field_#{cf.id}"] = cf.name
+      end
+
+      selected_fields = @project.project_required_fields.pluck(:field_name)
+    %>
+    <% available_fields.each do |field_name, label| %>
+      <label class="floating required-field-label">
+        <%= check_box_tag 'required_fields[]', field_name, selected_fields.include?(field_name) %>
+        <%= label %>
+      </label>
+    <% end %>
+  </fieldset>
   <%= submit_tag l(:button_save) %>
 <% end %>
