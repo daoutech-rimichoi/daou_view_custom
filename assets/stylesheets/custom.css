@@ -13,6 +13,7 @@ body, div, p, span, a, input, select, textarea, h1, h2, h3, h4, h5, h6 {
     text-align: center !important;
     text-transform: uppercase !important;
     color: #fff !important;
+    background-color: #607D8B !important; /* 기본값: 매칭 없을 때 블루그레이 */
 }
 
 /* 상태별 색상 매핑 (Redmine 기본 status ID 및 커스텀 클래스 지원) */
@@ -41,9 +42,21 @@ body, div, p, span, a, input, select, textarea, h1, h2, h3, h4, h5, h6 {
     border-color: #F57C00 !important;
 }
 
+/* 5. 승인 (Approved) - 보라색 계열 */
+.status-badge[data-status="승인"], .status.attribute[data-status="승인"] .value {
+    background-color: #7E57C2 !important;
+    border-color: #5E35B1 !important;
+}
+
+/* 6. 검증 (Verified) - 청록색 계열 */
+.status-badge[data-status="검증"], .status.attribute[data-status="검증"] .value {
+    background-color: #26A69A !important;
+    border-color: #00796B !important;
+}
+
 /* 기본값 (매칭되는 클래스가 없을 때) */
 .status-badge:not([data-status]), .status.attribute:not([data-status]) .value {
-    background-color: #9E9E9E;
+    background-color: #607D8B !important;
 }
 
 /* 일감 목록 표현 시 색상 조정 */
